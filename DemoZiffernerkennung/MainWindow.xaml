@@ -1,0 +1,40 @@
+﻿<Window x:Class="DemoZiffernerkennung.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoZiffernerkennung"
+        mc:Ignorable="d"
+        Title="KNN mit Backpropagation" Height="450" Width="600" Loaded="Window_Loaded">    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel >
+            <Label FontSize="22" HorizontalAlignment="Center">Auswertung Ziffernerkennung</Label>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <GroupBox Header="Hyperparameter und Auswertung" Margin="10" Padding="10">
+                <StackPanel >                    
+                    <TextBlock>Anzahl Neuronen:</TextBlock>
+                    <TextBox Name="teNeuron">20</TextBox>
+                    <TextBlock>Lernrate:</TextBlock>
+                    <TextBox Name="teLearningRate">0.01</TextBox>                    
+                    <TextBlock>Epoch:</TextBlock>
+                    <TextBox Name="teEpoch" IsReadOnly="True"></TextBox>
+                    <TextBlock>Genauigkeit:</TextBlock>
+                    <TextBox Name="teAccuracy" IsReadOnly="True"></TextBox>   
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="tbTraining" Height="25" Width="100" Margin="10" Click="tbTraining_Click">Training</Button>
+            <Button Name="tbTest" Height="25" Width="100" Margin="10" Click="tbTest_Click">Auswertung</Button>
+            <Button Height="25" Width="100" Margin="10 10 10 10" Click="Button_Click">Beenden</Button>
+        </StackPanel>
+    </Grid>
+</Window>
